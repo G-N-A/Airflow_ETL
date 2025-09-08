@@ -1,0 +1,186 @@
+[2025-09-08T14:20:03.439+0530] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-08T14:20:03.451+0530] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecom_etl_10min.run_etl_pipeline scheduled__2025-09-08T08:40:00+00:00 [queued]>
+[2025-09-08T14:20:03.454+0530] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecom_etl_10min.run_etl_pipeline scheduled__2025-09-08T08:40:00+00:00 [queued]>
+[2025-09-08T14:20:03.454+0530] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-09-08T14:20:03.517+0530] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): run_etl_pipeline> on 2025-09-08 08:40:00+00:00
+[2025-09-08T14:20:03.525+0530] {standard_task_runner.py:64} INFO - Started process 728859 to run task
+[2025-09-08T14:20:03.530+0530] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ecom_etl_10min', 'run_etl_pipeline', 'scheduled__2025-09-08T08:40:00+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/ecom_schedules.py', '--cfg-path', '/tmp/tmp_epfmecl']
+[2025-09-08T14:20:03.532+0530] {standard_task_runner.py:91} INFO - Job 43: Subtask run_etl_pipeline
+[2025-09-08T14:20:03.611+0530] {task_command.py:426} INFO - Running <TaskInstance: ecom_etl_10min.run_etl_pipeline scheduled__2025-09-08T08:40:00+00:00 [running]> on host softsuave-ASUS-EXPERTCENTER-D700ME-D500ME
+[2025-09-08T14:20:03.759+0530] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ecom_etl_10min' AIRFLOW_CTX_TASK_ID='run_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-09-08T08:40:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-09-08T08:40:00+00:00'
+[2025-09-08T14:20:03.759+0530] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-08T14:20:03.760+0530] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-09-08T14:20:03.760+0530] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'bash /media/softsuave/DATA-HDD/DataEngineering/Apache_Airflow/scripts/etl/run_etl.sh | cat']
+[2025-09-08T14:20:03.768+0530] {subprocess.py:86} INFO - Output:
+[2025-09-08T14:20:03.782+0530] {subprocess.py:93} INFO - [2025-09-08 14:20:03] 🚀 Starting E-Commerce ETL Pipeline...
+[2025-09-08T14:20:03.783+0530] {subprocess.py:93} INFO - ----------------------------------------
+[2025-09-08T14:20:03.783+0530] {subprocess.py:93} INFO -  Source DB   : ecom_db
+[2025-09-08T14:20:03.783+0530] {subprocess.py:93} INFO -  Target DB   : ecom_dwh
+[2025-09-08T14:20:03.784+0530] {subprocess.py:93} INFO -  Server      : localhost:1433
+[2025-09-08T14:20:03.784+0530] {subprocess.py:93} INFO -  Spark Master: local[*]
+[2025-09-08T14:20:03.784+0530] {subprocess.py:93} INFO - ----------------------------------------
+[2025-09-08T14:20:03.784+0530] {subprocess.py:93} INFO - 
+[2025-09-08T14:20:03.786+0530] {subprocess.py:93} INFO - [2025-09-08 14:20:03] 🔄 Running ETL Pipeline with spark-submit...
+[2025-09-08T14:20:06.610+0530] {subprocess.py:93} INFO - 25/09/08 14:20:06 WARN Utils: Your hostname, softsuave-ASUS-EXPERTCENTER-D700ME-D500ME resolves to a loopback address: 127.0.1.1; using 192.168.6.3 instead (on interface eno2)
+[2025-09-08T14:20:06.611+0530] {subprocess.py:93} INFO - 25/09/08 14:20:06 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2025-09-08T14:20:10.357+0530] {subprocess.py:93} INFO - 25/09/08 14:20:10 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-09-08T14:20:11.308+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO SparkContext: Running Spark version 3.4.2
+[2025-09-08T14:20:11.347+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO ResourceUtils: ==============================================================
+[2025-09-08T14:20:11.347+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-09-08T14:20:11.347+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO ResourceUtils: ==============================================================
+[2025-09-08T14:20:11.347+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO SparkContext: Submitted application: ECommerce_ETL_Pipeline
+[2025-09-08T14:20:11.371+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-09-08T14:20:11.377+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO ResourceProfile: Limiting resource is cpu
+[2025-09-08T14:20:11.378+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-09-08T14:20:11.436+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO SecurityManager: Changing view acls to: softsuave
+[2025-09-08T14:20:11.436+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO SecurityManager: Changing modify acls to: softsuave
+[2025-09-08T14:20:11.436+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO SecurityManager: Changing view acls groups to:
+[2025-09-08T14:20:11.436+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO SecurityManager: Changing modify acls groups to:
+[2025-09-08T14:20:11.437+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: softsuave; groups with view permissions: EMPTY; users with modify permissions: softsuave; groups with modify permissions: EMPTY
+[2025-09-08T14:20:11.694+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO Utils: Successfully started service 'sparkDriver' on port 37737.
+[2025-09-08T14:20:11.762+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO SparkEnv: Registering MapOutputTracker
+[2025-09-08T14:20:11.800+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO SparkEnv: Registering BlockManagerMaster
+[2025-09-08T14:20:11.821+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-09-08T14:20:11.821+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-09-08T14:20:11.832+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-09-08T14:20:11.856+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-d742b5b5-b2b2-47b2-ac17-7e7db7f257ae
+[2025-09-08T14:20:11.896+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+[2025-09-08T14:20:11.910+0530] {subprocess.py:93} INFO - 25/09/08 14:20:11 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-09-08T14:20:12.183+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-09-08T14:20:12.244+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-09-08T14:20:12.298+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO SparkContext: Added JAR file:///media/softsuave/DATA-HDD/DataEngineering/Apache_Airflow/libs/jars/mssql-jdbc-12.2.0.jre8.jar at spark://192.168.6.3:37737/jars/mssql-jdbc-12.2.0.jre8.jar with timestamp 1757321411301
+[2025-09-08T14:20:12.341+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO Executor: Starting executor ID driver on host 192.168.6.3
+[2025-09-08T14:20:12.345+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2025-09-08T14:20:12.373+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO Executor: Fetching spark://192.168.6.3:37737/jars/mssql-jdbc-12.2.0.jre8.jar with timestamp 1757321411301
+[2025-09-08T14:20:12.411+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO TransportClientFactory: Successfully created connection to /192.168.6.3:37737 after 23 ms (0 ms spent in bootstraps)
+[2025-09-08T14:20:12.416+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO Utils: Fetching spark://192.168.6.3:37737/jars/mssql-jdbc-12.2.0.jre8.jar to /tmp/spark-18a8173e-ed74-4fd8-8dcc-ad4760d903e4/userFiles-222c1090-743e-40b2-be11-555a69cb35f4/fetchFileTemp2284261519298257033.tmp
+[2025-09-08T14:20:12.589+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO Executor: Adding file:/tmp/spark-18a8173e-ed74-4fd8-8dcc-ad4760d903e4/userFiles-222c1090-743e-40b2-be11-555a69cb35f4/mssql-jdbc-12.2.0.jre8.jar to class loader
+[2025-09-08T14:20:12.605+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36681.
+[2025-09-08T14:20:12.605+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO NettyBlockTransferService: Server created on 192.168.6.3:36681
+[2025-09-08T14:20:12.607+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-09-08T14:20:12.612+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.6.3, 36681, None)
+[2025-09-08T14:20:12.616+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.6.3:36681 with 366.3 MiB RAM, BlockManagerId(driver, 192.168.6.3, 36681, None)
+[2025-09-08T14:20:12.618+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.6.3, 36681, None)
+[2025-09-08T14:20:12.618+0530] {subprocess.py:93} INFO - 25/09/08 14:20:12 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.6.3, 36681, None)
+[2025-09-08T14:20:13.123+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:13,123 - __main__ - INFO - Starting ETL pipeline - Batch ID: 20250908085013
+[2025-09-08T14:20:13.124+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:13,123 - __main__ - INFO - Extracting data from table: customers
+[2025-09-08T14:20:17.903+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:17,903 - __main__ - INFO - Extracted 1000 records from customers
+[2025-09-08T14:20:17.904+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:17,903 - __main__ - INFO - Extracting data from table: products
+[2025-09-08T14:20:18.004+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:18,004 - __main__ - INFO - Extracted 500 records from products
+[2025-09-08T14:20:18.004+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:18,004 - __main__ - INFO - Extracting data from table: orders
+[2025-09-08T14:20:18.111+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:18,110 - __main__ - INFO - Extracted 70000 records from orders
+[2025-09-08T14:20:18.111+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:18,111 - __main__ - INFO - Extracting data from table: order_items
+[2025-09-08T14:20:18.214+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:18,214 - __main__ - INFO - Extracted 121354 records from order_items
+[2025-09-08T14:20:18.214+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:18,214 - __main__ - INFO - Extracting data from table: inventory
+[2025-09-08T14:20:18.331+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:18,331 - __main__ - INFO - Extracted 500 records from inventory
+[2025-09-08T14:20:18.332+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:18,331 - __main__ - INFO - Extracting data from table: clickstream
+[2025-09-08T14:20:18.519+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:18,518 - __main__ - INFO - Extracted 671966 records from clickstream
+[2025-09-08T14:20:18.519+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:18,519 - __main__ - INFO - Cleaning customer data...
+[2025-09-08T14:20:19.104+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:19,103 - __main__ - INFO - Customer cleaning complete. Records: 1000 -> 1000
+[2025-09-08T14:20:19.104+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:19,104 - __main__ - INFO - Cleaning product data...
+[2025-09-08T14:20:19.458+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:19,458 - __main__ - INFO - Product cleaning complete. Records: 500 -> 500
+[2025-09-08T14:20:19.459+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:19,458 - __main__ - INFO - Cleaning order data...
+[2025-09-08T14:20:19.934+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:19,934 - __main__ - INFO - Order cleaning complete. Records: 70000 -> 70000
+[2025-09-08T14:20:20.374+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:20,374 - __main__ - INFO - Cleaning order items data...
+[2025-09-08T14:20:20.684+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:20,683 - __main__ - INFO - Order items cleaning complete. Records: 121354 -> 121354
+[2025-09-08T14:20:21.061+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:21,061 - __main__ - INFO - Cleaning inventory data...
+[2025-09-08T14:20:21.208+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:21,208 - __main__ - INFO - Inventory cleaning complete. Records: 500 -> 500
+[2025-09-08T14:20:21.354+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:21,354 - __main__ - INFO - Cleaning clickstream data...
+[2025-09-08T14:20:27.949+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:27,948 - __main__ - INFO - Clickstream cleaning complete. Records: 671966 -> 671966
+[2025-09-08T14:20:30.834+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:30,834 - __main__ - INFO - Creating Customer 360 view...
+[2025-09-08T14:20:31.149+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:31,148 - __main__ - INFO - Customer 360 view created with 1000 records
+[2025-09-08T14:20:31.149+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:31,149 - __main__ - INFO - Creating Product Analytics view...
+[2025-09-08T14:20:31.551+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:31,551 - __main__ - INFO - Product Analytics view created with 500 records
+[2025-09-08T14:20:31.551+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:31,551 - __main__ - INFO - Generating data quality report...
+[2025-09-08T14:20:31.981+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:31,981 - __main__ - INFO - Loading 1000 records to dim_customers in overwrite mode...
+[2025-09-08T14:20:33.337+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:33,337 - __main__ - INFO - Successfully loaded data to dim_customers
+[2025-09-08T14:20:33.418+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:33,418 - __main__ - INFO - Loading 500 records to dim_products in overwrite mode...
+[2025-09-08T14:20:34.138+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:34,137 - __main__ - INFO - Successfully loaded data to dim_products
+[2025-09-08T14:20:34.313+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:34,313 - __main__ - INFO - Loading 70000 records to fact_orders in overwrite mode...
+[2025-09-08T14:20:38.296+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:38,296 - __main__ - INFO - Successfully loaded data to fact_orders
+[2025-09-08T14:20:38.419+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:38,419 - __main__ - INFO - Loading 121354 records to fact_order_items in overwrite mode...
+[2025-09-08T14:20:42.120+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:42,119 - __main__ - INFO - Successfully loaded data to fact_order_items
+[2025-09-08T14:20:42.203+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:42,203 - __main__ - INFO - Loading 500 records to dim_inventory in overwrite mode...
+[2025-09-08T14:20:42.692+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:42,692 - __main__ - INFO - Successfully loaded data to dim_inventory
+[2025-09-08T14:20:46.731+0530] {subprocess.py:93} INFO - 2025-09-08 14:20:46,731 - __main__ - INFO - Loading 671966 records to fact_clickstream in overwrite mode...
+[2025-09-08T14:21:20.290+0530] {subprocess.py:93} INFO - 2025-09-08 14:21:20,290 - __main__ - INFO - Successfully loaded data to fact_clickstream
+[2025-09-08T14:21:20.450+0530] {subprocess.py:93} INFO - 2025-09-08 14:21:20,449 - __main__ - INFO - Loading 1000 records to analytics_customer_360 in overwrite mode...
+[2025-09-08T14:21:20.458+0530] {subprocess.py:93} INFO - 25/09/08 14:21:20 WARN package: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+[2025-09-08T14:21:27.652+0530] {subprocess.py:93} INFO - 2025-09-08 14:21:27,652 - __main__ - INFO - Successfully loaded data to analytics_customer_360
+[2025-09-08T14:21:27.775+0530] {subprocess.py:93} INFO - 2025-09-08 14:21:27,775 - __main__ - INFO - Loading 500 records to analytics_product_performance in overwrite mode...
+[2025-09-08T14:21:28.108+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.112+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.115+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.216+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.219+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.238+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.240+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.275+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.276+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.332+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.333+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.364+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.365+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.563+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.564+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.613+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:28.614+0530] {subprocess.py:93} INFO - 25/09/08 14:21:28 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:30.345+0530] {subprocess.py:93} INFO - 25/09/08 14:21:30 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:30.346+0530] {subprocess.py:93} INFO - 25/09/08 14:21:30 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:31.221+0530] {subprocess.py:93} INFO - 25/09/08 14:21:31 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:31.222+0530] {subprocess.py:93} INFO - 25/09/08 14:21:31 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:31.407+0530] {subprocess.py:93} INFO - 25/09/08 14:21:31 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:31.407+0530] {subprocess.py:93} INFO - 25/09/08 14:21:31 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:31.453+0530] {subprocess.py:93} INFO - 25/09/08 14:21:31 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:31.454+0530] {subprocess.py:93} INFO - 25/09/08 14:21:31 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:31.483+0530] {subprocess.py:93} INFO - 25/09/08 14:21:31 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:31.483+0530] {subprocess.py:93} INFO - 25/09/08 14:21:31 WARN WindowExec: No Partition Defined for Window operation! Moving all data to a single partition, this can cause serious performance degradation.
+[2025-09-08T14:21:31.857+0530] {subprocess.py:93} INFO - 2025-09-08 14:21:31,856 - __main__ - INFO - Successfully loaded data to analytics_product_performance
+[2025-09-08T14:21:33.970+0530] {subprocess.py:93} INFO - 2025-09-08 14:21:33,970 - __main__ - INFO - Loading 18 records to etl_data_quality_log in append mode...
+[2025-09-08T14:21:34.346+0530] {subprocess.py:93} INFO - 2025-09-08 14:21:34,346 - __main__ - INFO - Successfully loaded data to etl_data_quality_log
+[2025-09-08T14:21:34.346+0530] {subprocess.py:93} INFO - 2025-09-08 14:21:34,346 - __main__ - INFO - ETL pipeline completed successfully - Batch ID: 20250908085013
+[2025-09-08T14:21:34.346+0530] {subprocess.py:93} INFO - 
+[2025-09-08T14:21:34.346+0530] {subprocess.py:93} INFO - ============================================================
+[2025-09-08T14:21:34.346+0530] {subprocess.py:93} INFO - ETL Pipeline Summary - Batch ID: 20250908085013
+[2025-09-08T14:21:34.347+0530] {subprocess.py:93} INFO - ============================================================
+[2025-09-08T14:21:34.347+0530] {subprocess.py:93} INFO - 
+[2025-09-08T14:21:34.347+0530] {subprocess.py:93} INFO - CUSTOMERS:
+[2025-09-08T14:21:34.347+0530] {subprocess.py:93} INFO -   initial_count: 1000
+[2025-09-08T14:21:34.347+0530] {subprocess.py:93} INFO -   final_count: 1000
+[2025-09-08T14:21:34.347+0530] {subprocess.py:93} INFO -   duplicates_removed: 0
+[2025-09-08T14:21:34.347+0530] {subprocess.py:93} INFO - 
+[2025-09-08T14:21:34.347+0530] {subprocess.py:93} INFO - PRODUCTS:
+[2025-09-08T14:21:34.347+0530] {subprocess.py:93} INFO -   initial_count: 500
+[2025-09-08T14:21:34.347+0530] {subprocess.py:93} INFO -   final_count: 500
+[2025-09-08T14:21:34.347+0530] {subprocess.py:93} INFO -   invalid_prices_removed: 0
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO - 
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO - ORDERS:
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO -   initial_count: 70000
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO -   final_count: 70000
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO -   amount_mismatches: 0
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO - 
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO - ORDER_ITEMS:
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO -   initial_count: 121354
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO -   final_count: 121354
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO -   line_total_mismatches: 0
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO - 
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO - INVENTORY:
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO -   initial_count: 500
+[2025-09-08T14:21:34.348+0530] {subprocess.py:93} INFO -   final_count: 500
+[2025-09-08T14:21:34.349+0530] {subprocess.py:93} INFO -   out_of_stock_count: 174
+[2025-09-08T14:21:34.349+0530] {subprocess.py:93} INFO - 
+[2025-09-08T14:21:34.349+0530] {subprocess.py:93} INFO - CLICKSTREAM:
+[2025-09-08T14:21:34.349+0530] {subprocess.py:93} INFO -   initial_count: 671966
+[2025-09-08T14:21:34.349+0530] {subprocess.py:93} INFO -   final_count: 671966
+[2025-09-08T14:21:34.349+0530] {subprocess.py:93} INFO -   potential_bots: 0
+[2025-09-08T14:21:34.349+0530] {subprocess.py:93} INFO - ============================================================
+[2025-09-08T14:21:34.349+0530] {subprocess.py:93} INFO - 
+[2025-09-08T14:21:35.341+0530] {subprocess.py:93} INFO - 2025-09-08 14:21:35,341 - py4j.clientserver - INFO - Closing down clientserver connection
+[2025-09-08T14:21:35.655+0530] {subprocess.py:93} INFO - [2025-09-08 14:21:35] ✅ ETL Pipeline completed successfully!
+[2025-09-08T14:21:35.658+0530] {subprocess.py:93} INFO - [2025-09-08 14:21:35] 🎉 Data loaded into target DB: ecom_dwh
+[2025-09-08T14:21:35.659+0530] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-09-08T14:21:35.660+0530] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-08T14:21:36.028+0530] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ecom_etl_10min, task_id=run_etl_pipeline, run_id=scheduled__2025-09-08T08:40:00+00:00, execution_date=20250908T084000, start_date=20250908T085003, end_date=20250908T085136
+[2025-09-08T14:21:36.427+0530] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-09-08T14:21:36.442+0530] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-08T14:21:36.442+0530] {local_task_job_runner.py:222} INFO - ::endgroup::

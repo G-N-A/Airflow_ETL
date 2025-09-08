@@ -1,0 +1,297 @@
+[2025-09-08T13:00:03.174+0530] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-08T13:00:03.185+0530] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ecom_etl_10min.run_etl_pipeline scheduled__2025-09-08T07:20:00+00:00 [queued]>
+[2025-09-08T13:00:03.188+0530] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ecom_etl_10min.run_etl_pipeline scheduled__2025-09-08T07:20:00+00:00 [queued]>
+[2025-09-08T13:00:03.188+0530] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-09-08T13:00:03.247+0530] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): run_etl_pipeline> on 2025-09-08 07:20:00+00:00
+[2025-09-08T13:00:03.255+0530] {standard_task_runner.py:64} INFO - Started process 706802 to run task
+[2025-09-08T13:00:03.260+0530] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'ecom_etl_10min', 'run_etl_pipeline', 'scheduled__2025-09-08T07:20:00+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/ecom_schedules.py', '--cfg-path', '/tmp/tmph25g0q22']
+[2025-09-08T13:00:03.261+0530] {standard_task_runner.py:91} INFO - Job 18: Subtask run_etl_pipeline
+[2025-09-08T13:00:03.328+0530] {task_command.py:426} INFO - Running <TaskInstance: ecom_etl_10min.run_etl_pipeline scheduled__2025-09-08T07:20:00+00:00 [running]> on host softsuave-ASUS-EXPERTCENTER-D700ME-D500ME
+[2025-09-08T13:00:03.469+0530] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='ecom_etl_10min' AIRFLOW_CTX_TASK_ID='run_etl_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-09-08T07:20:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-09-08T07:20:00+00:00'
+[2025-09-08T13:00:03.470+0530] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-08T13:00:03.471+0530] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-09-08T13:00:03.471+0530] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'bash /media/softsuave/DATA-HDD/DataEngineering/Apache_Airflow/scripts/etl/run_etl.sh | cat']
+[2025-09-08T13:00:03.478+0530] {subprocess.py:86} INFO - Output:
+[2025-09-08T13:00:03.488+0530] {subprocess.py:93} INFO - [2025-09-08 13:00:03] 🚀 Starting E-Commerce ETL Pipeline...
+[2025-09-08T13:00:03.489+0530] {subprocess.py:93} INFO - ----------------------------------------
+[2025-09-08T13:00:03.489+0530] {subprocess.py:93} INFO -  Source DB   : ecom_db
+[2025-09-08T13:00:03.490+0530] {subprocess.py:93} INFO -  Target DB   : ecom_dwh
+[2025-09-08T13:00:03.490+0530] {subprocess.py:93} INFO -  Server      : localhost:1433
+[2025-09-08T13:00:03.490+0530] {subprocess.py:93} INFO -  Spark Master: local[*]
+[2025-09-08T13:00:03.491+0530] {subprocess.py:93} INFO - ----------------------------------------
+[2025-09-08T13:00:03.491+0530] {subprocess.py:93} INFO - 
+[2025-09-08T13:00:03.491+0530] {subprocess.py:93} INFO - [2025-09-08 13:00:03] 🔄 Running ETL Pipeline with spark-submit...
+[2025-09-08T13:00:06.036+0530] {subprocess.py:93} INFO - 25/09/08 13:00:06 WARN Utils: Your hostname, softsuave-ASUS-EXPERTCENTER-D700ME-D500ME resolves to a loopback address: 127.0.1.1; using 192.168.6.3 instead (on interface eno2)
+[2025-09-08T13:00:06.038+0530] {subprocess.py:93} INFO - 25/09/08 13:00:06 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2025-09-08T13:00:09.393+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-09-08T13:00:09.896+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO SparkContext: Running Spark version 3.4.2
+[2025-09-08T13:00:09.916+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO ResourceUtils: ==============================================================
+[2025-09-08T13:00:09.916+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-09-08T13:00:09.916+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO ResourceUtils: ==============================================================
+[2025-09-08T13:00:09.916+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO SparkContext: Submitted application: ECommerce_ETL_Pipeline
+[2025-09-08T13:00:09.931+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-09-08T13:00:09.938+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO ResourceProfile: Limiting resource is cpu
+[2025-09-08T13:00:09.938+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-09-08T13:00:09.972+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO SecurityManager: Changing view acls to: softsuave
+[2025-09-08T13:00:09.972+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO SecurityManager: Changing modify acls to: softsuave
+[2025-09-08T13:00:09.972+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO SecurityManager: Changing view acls groups to:
+[2025-09-08T13:00:09.972+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO SecurityManager: Changing modify acls groups to:
+[2025-09-08T13:00:09.972+0530] {subprocess.py:93} INFO - 25/09/08 13:00:09 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: softsuave; groups with view permissions: EMPTY; users with modify permissions: softsuave; groups with modify permissions: EMPTY
+[2025-09-08T13:00:10.126+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO Utils: Successfully started service 'sparkDriver' on port 42189.
+[2025-09-08T13:00:10.170+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO SparkEnv: Registering MapOutputTracker
+[2025-09-08T13:00:10.198+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO SparkEnv: Registering BlockManagerMaster
+[2025-09-08T13:00:10.208+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-09-08T13:00:10.208+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-09-08T13:00:10.210+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-09-08T13:00:10.224+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-e2a1c841-97ea-47a7-a8b9-75bab6b88aa3
+[2025-09-08T13:00:10.235+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+[2025-09-08T13:00:10.245+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-09-08T13:00:10.343+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-09-08T13:00:10.381+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-09-08T13:00:10.406+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO SparkContext: Added JAR file:///media/softsuave/DATA-HDD/DataEngineering/Apache_Airflow/libs/jars/mssql-jdbc-12.2.0.jre8.jar at spark://192.168.6.3:42189/jars/mssql-jdbc-12.2.0.jre8.jar with timestamp 1757316609891
+[2025-09-08T13:00:10.447+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO Executor: Starting executor ID driver on host 192.168.6.3
+[2025-09-08T13:00:10.451+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2025-09-08T13:00:10.460+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO Executor: Fetching spark://192.168.6.3:42189/jars/mssql-jdbc-12.2.0.jre8.jar with timestamp 1757316609891
+[2025-09-08T13:00:10.491+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO TransportClientFactory: Successfully created connection to /192.168.6.3:42189 after 17 ms (0 ms spent in bootstraps)
+[2025-09-08T13:00:10.500+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO Utils: Fetching spark://192.168.6.3:42189/jars/mssql-jdbc-12.2.0.jre8.jar to /tmp/spark-4a4fdfb7-36f8-4047-aa5d-96c67d0e5560/userFiles-11b56462-e59f-4ec0-9689-e7c94839eedb/fetchFileTemp5991772608213698333.tmp
+[2025-09-08T13:00:10.517+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO Executor: Adding file:/tmp/spark-4a4fdfb7-36f8-4047-aa5d-96c67d0e5560/userFiles-11b56462-e59f-4ec0-9689-e7c94839eedb/mssql-jdbc-12.2.0.jre8.jar to class loader
+[2025-09-08T13:00:10.521+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35639.
+[2025-09-08T13:00:10.521+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO NettyBlockTransferService: Server created on 192.168.6.3:35639
+[2025-09-08T13:00:10.522+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-09-08T13:00:10.526+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.6.3, 35639, None)
+[2025-09-08T13:00:10.528+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.6.3:35639 with 366.3 MiB RAM, BlockManagerId(driver, 192.168.6.3, 35639, None)
+[2025-09-08T13:00:10.529+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.6.3, 35639, None)
+[2025-09-08T13:00:10.530+0530] {subprocess.py:93} INFO - 25/09/08 13:00:10 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.6.3, 35639, None)
+[2025-09-08T13:00:10.721+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:10,721 - __main__ - INFO - Starting ETL pipeline - Batch ID: 20250908073010
+[2025-09-08T13:00:10.721+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:10,721 - __main__ - INFO - Extracting data from table: customers
+[2025-09-08T13:00:14.002+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,002 - __main__ - INFO - Extracted 0 records from customers
+[2025-09-08T13:00:14.002+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,002 - __main__ - INFO - Extracting data from table: products
+[2025-09-08T13:00:14.106+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,106 - __main__ - INFO - Extracted 0 records from products
+[2025-09-08T13:00:14.106+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,106 - __main__ - INFO - Extracting data from table: orders
+[2025-09-08T13:00:14.192+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,192 - __main__ - INFO - Extracted 0 records from orders
+[2025-09-08T13:00:14.193+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,192 - __main__ - INFO - Extracting data from table: order_items
+[2025-09-08T13:00:14.274+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,274 - __main__ - INFO - Extracted 0 records from order_items
+[2025-09-08T13:00:14.275+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,274 - __main__ - INFO - Extracting data from table: inventory
+[2025-09-08T13:00:14.354+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,354 - __main__ - INFO - Extracted 0 records from inventory
+[2025-09-08T13:00:14.354+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,354 - __main__ - INFO - Extracting data from table: clickstream
+[2025-09-08T13:00:14.425+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,425 - __main__ - INFO - Extracted 0 records from clickstream
+[2025-09-08T13:00:14.425+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,425 - __main__ - INFO - Cleaning customer data...
+[2025-09-08T13:00:14.900+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,900 - __main__ - INFO - Customer cleaning complete. Records: 0 -> 0
+[2025-09-08T13:00:14.900+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:14,900 - __main__ - INFO - Cleaning product data...
+[2025-09-08T13:00:15.195+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:15,195 - __main__ - INFO - Product cleaning complete. Records: 0 -> 0
+[2025-09-08T13:00:15.195+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:15,195 - __main__ - INFO - Cleaning order data...
+[2025-09-08T13:00:15.459+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:15,459 - __main__ - INFO - Order cleaning complete. Records: 0 -> 0
+[2025-09-08T13:00:15.577+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:15,577 - __main__ - INFO - Cleaning order items data...
+[2025-09-08T13:00:15.732+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:15,731 - __main__ - INFO - Order items cleaning complete. Records: 0 -> 0
+[2025-09-08T13:00:15.827+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:15,827 - __main__ - INFO - Cleaning inventory data...
+[2025-09-08T13:00:15.998+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:15,997 - __main__ - INFO - Inventory cleaning complete. Records: 0 -> 0
+[2025-09-08T13:00:16.094+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:16,094 - __main__ - INFO - Cleaning clickstream data...
+[2025-09-08T13:00:16.385+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:16,385 - __main__ - INFO - Clickstream cleaning complete. Records: 0 -> 0
+[2025-09-08T13:00:16.511+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:16,511 - __main__ - INFO - Creating Customer 360 view...
+[2025-09-08T13:00:16.827+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:16,827 - __main__ - INFO - Customer 360 view created with 0 records
+[2025-09-08T13:00:16.827+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:16,827 - __main__ - INFO - Creating Product Analytics view...
+[2025-09-08T13:00:17.070+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:17,069 - __main__ - INFO - Product Analytics view created with 0 records
+[2025-09-08T13:00:17.070+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:17,070 - __main__ - INFO - Generating data quality report...
+[2025-09-08T13:00:17.335+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:17,335 - __main__ - INFO - Loading 0 records to dim_customers in overwrite mode...
+[2025-09-08T13:00:47.028+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:47,028 - __main__ - ERROR - Failed to load data to dim_customers: An error occurred while calling o926.jdbc.
+[2025-09-08T13:00:47.028+0530] {subprocess.py:93} INFO - : com.microsoft.sqlserver.jdbc.SQLServerException: Cannot open database "ecom_dwh" requested by the login. The login failed. ClientConnectionId:b526182e-7245-422e-b068-feb6e3abeb28
+[2025-09-08T13:00:47.028+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+[2025-09-08T13:00:47.029+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:305)
+[2025-09-08T13:00:47.029+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:138)
+[2025-09-08T13:00:47.029+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+[2025-09-08T13:00:47.029+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:6490)
+[2025-09-08T13:00:47.029+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5068)
+[2025-09-08T13:00:47.029+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.access$100(SQLServerConnection.java:93)
+[2025-09-08T13:00:47.029+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5002)
+[2025-09-08T13:00:47.029+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+[2025-09-08T13:00:47.029+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+[2025-09-08T13:00:47.029+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3487)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.connection.BasicConnectionProvider.getConnection(BasicConnectionProvider.scala:49)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.connection.ConnectionProviderBase.create(ConnectionProvider.scala:102)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1(JdbcDialects.scala:123)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1$adapted(JdbcDialects.scala:119)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:50)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:47)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+[2025-09-08T13:00:47.030+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:512)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:104)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:512)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:31)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:488)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+[2025-09-08T13:00:47.031+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:133)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:856)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:387)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:360)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.jdbc(DataFrameWriter.scala:753)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at java.lang.reflect.Method.invoke(Method.java:498)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at java.lang.Thread.run(Thread.java:750)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:47,028 - __main__ - ERROR - ETL pipeline failed: An error occurred while calling o926.jdbc.
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - : com.microsoft.sqlserver.jdbc.SQLServerException: Cannot open database "ecom_dwh" requested by the login. The login failed. ClientConnectionId:b526182e-7245-422e-b068-feb6e3abeb28
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:305)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:138)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+[2025-09-08T13:00:47.032+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:6490)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5068)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.access$100(SQLServerConnection.java:93)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5002)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3487)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.connection.BasicConnectionProvider.getConnection(BasicConnectionProvider.scala:49)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.connection.ConnectionProviderBase.create(ConnectionProvider.scala:102)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1(JdbcDialects.scala:123)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1$adapted(JdbcDialects.scala:119)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:50)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:47)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+[2025-09-08T13:00:47.033+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:512)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:104)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:512)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:31)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:488)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:133)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:856)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:387)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:360)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.jdbc(DataFrameWriter.scala:753)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at java.lang.reflect.Method.invoke(Method.java:498)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-09-08T13:00:47.034+0530] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at java.lang.Thread.run(Thread.java:750)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:47,028 - __main__ - ERROR - ETL pipeline failed: An error occurred while calling o926.jdbc.
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - : com.microsoft.sqlserver.jdbc.SQLServerException: Cannot open database "ecom_dwh" requested by the login. The login failed. ClientConnectionId:b526182e-7245-422e-b068-feb6e3abeb28
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:265)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onEOF(tdsparser.java:305)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:138)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:6490)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5068)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.access$100(SQLServerConnection.java:93)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5002)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7685)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4048)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:3487)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3077)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:2919)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:1787)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1229)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.connection.BasicConnectionProvider.getConnection(BasicConnectionProvider.scala:49)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.connection.ConnectionProviderBase.create(ConnectionProvider.scala:102)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1(JdbcDialects.scala:123)
+[2025-09-08T13:00:47.035+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.jdbc.JdbcDialect.$anonfun$createConnectionFactory$1$adapted(JdbcDialects.scala:119)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:50)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:47)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:512)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:104)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:512)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:31)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:488)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:133)
+[2025-09-08T13:00:47.036+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:856)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:387)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:360)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameWriter.jdbc(DataFrameWriter.scala:753)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at java.lang.reflect.Method.invoke(Method.java:498)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 	at java.lang.Thread.run(Thread.java:750)
+[2025-09-08T13:00:47.037+0530] {subprocess.py:93} INFO - 
+[2025-09-08T13:00:47.693+0530] {subprocess.py:93} INFO - 2025-09-08 13:00:47,693 - py4j.clientserver - INFO - Closing down clientserver connection
+[2025-09-08T13:00:47.807+0530] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-09-08T13:00:47.807+0530] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-08T13:00:47.870+0530] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ecom_etl_10min, task_id=run_etl_pipeline, run_id=scheduled__2025-09-08T07:20:00+00:00, execution_date=20250908T072000, start_date=20250908T073003, end_date=20250908T073047
+[2025-09-08T13:00:47.962+0530] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-09-08T13:00:47.969+0530] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-08T13:00:47.970+0530] {local_task_job_runner.py:222} INFO - ::endgroup::

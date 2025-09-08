@@ -1,0 +1,100 @@
+[2025-09-08T13:20:48.795+0530] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-08T13:20:48.807+0530] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: synth_stream_5min.run_synth_stream scheduled__2025-09-08T07:45:00+00:00 [queued]>
+[2025-09-08T13:20:48.810+0530] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: synth_stream_5min.run_synth_stream scheduled__2025-09-08T07:45:00+00:00 [queued]>
+[2025-09-08T13:20:48.810+0530] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-09-08T13:20:48.872+0530] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): run_synth_stream> on 2025-09-08 07:45:00+00:00
+[2025-09-08T13:20:48.880+0530] {standard_task_runner.py:64} INFO - Started process 713160 to run task
+[2025-09-08T13:20:48.885+0530] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'synth_stream_5min', 'run_synth_stream', 'scheduled__2025-09-08T07:45:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/ecom_schedules.py', '--cfg-path', '/tmp/tmpvv3yfko1']
+[2025-09-08T13:20:48.887+0530] {standard_task_runner.py:91} INFO - Job 25: Subtask run_synth_stream
+[2025-09-08T13:20:48.969+0530] {task_command.py:426} INFO - Running <TaskInstance: synth_stream_5min.run_synth_stream scheduled__2025-09-08T07:45:00+00:00 [running]> on host softsuave-ASUS-EXPERTCENTER-D700ME-D500ME
+[2025-09-08T13:20:49.127+0530] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='synth_stream_5min' AIRFLOW_CTX_TASK_ID='run_synth_stream' AIRFLOW_CTX_EXECUTION_DATE='2025-09-08T07:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-09-08T07:45:00+00:00'
+[2025-09-08T13:20:49.129+0530] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-08T13:20:49.130+0530] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-09-08T13:20:49.130+0530] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'bash /media/softsuave/DATA-HDD/DataEngineering/Apache_Airflow/scripts/synth/run_synth_stream.sh | cat']
+[2025-09-08T13:20:49.139+0530] {subprocess.py:86} INFO - Output:
+[2025-09-08T13:20:49.179+0530] {subprocess.py:93} INFO - [2025-09-08 13:20:49] 🚀 Starting Synthetic E-commerce Data Stream...
+[2025-09-08T13:20:49.180+0530] {subprocess.py:93} INFO - ----------------------------------------------
+[2025-09-08T13:20:49.180+0530] {subprocess.py:93} INFO -  Database   : ecom_db
+[2025-09-08T13:20:49.180+0530] {subprocess.py:93} INFO -  User       : sa
+[2025-09-08T13:20:49.180+0530] {subprocess.py:93} INFO -  Server     : localhost:1433
+[2025-09-08T13:20:49.180+0530] {subprocess.py:93} INFO -  Interval   : 5 min
+[2025-09-08T13:20:49.180+0530] {subprocess.py:93} INFO -  Orders     : 50
+[2025-09-08T13:20:49.180+0530] {subprocess.py:93} INFO -  Clicks     : 100
+[2025-09-08T13:20:49.180+0530] {subprocess.py:93} INFO -  Webhook    : http://localhost:5000/webhook
+[2025-09-08T13:20:49.180+0530] {subprocess.py:93} INFO - ----------------------------------------------
+[2025-09-08T13:20:49.180+0530] {subprocess.py:93} INFO - 
+[2025-09-08T13:20:49.233+0530] {subprocess.py:93} INFO - [2025-09-08 13:20:49] 🔧 Activating virtual environment...
+[2025-09-08T13:20:49.236+0530] {subprocess.py:93} INFO - [2025-09-08 13:20:49] 🔍 Checking database connection...
+[2025-09-08T13:20:49.270+0530] {subprocess.py:93} INFO - ✅ Database connection successful
+[2025-09-08T13:20:49.279+0530] {subprocess.py:93} INFO - [2025-09-08 13:20:49] 🔄 Starting synthetic data stream...
+[2025-09-08T13:20:49.280+0530] {subprocess.py:93} INFO - Press Ctrl+C to stop
+[2025-09-08T13:20:49.280+0530] {subprocess.py:93} INFO - 
+[2025-09-08T13:20:49.517+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:49,517 INFO: Tables ensured/created (if needed).
+[2025-09-08T13:20:49.529+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:49,529 INFO: Customers: 1000 already present; skipping seeding.
+[2025-09-08T13:20:49.530+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:49,530 INFO: Products: 500 already present; skipping seeding.
+[2025-09-08T13:20:49.530+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:49,530 INFO: Running one-shot generation: orders=5000, sessions=3000
+[2025-09-08T13:20:49.536+0530] {subprocess.py:93} INFO - /media/softsuave/DATA-HDD/DataEngineering/Apache_Airflow/src/synth_ecom_mssql_stream.py:397: RemovedIn20Warning: Deprecated API features detected! These feature(s) are not compatible with SQLAlchemy 2.0. To prevent incompatible upgrades prior to updating applications, ensure requirements files are pinned to "sqlalchemy<2.0". Set environment variable SQLALCHEMY_WARN_20=1 to show all deprecation warnings.  Set environment variable SQLALCHEMY_SILENCE_UBER_WARNING=1 to silence this message. (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+[2025-09-08T13:20:49.536+0530] {subprocess.py:93} INFO -   customers = [dict(r) for r in conn.execute(select(self.tables["customers"])).fetchall()]
+[2025-09-08T13:20:49.543+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:49,543 INFO: Generating 5000 orders (batch_size=200, force_order_date_now=False)...
+[2025-09-08T13:20:49.751+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:49,751 INFO: Flushed batch: orders=200 items=337
+[2025-09-08T13:20:49.757+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:49,756 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7938111b2710>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:50.026+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,026 INFO: Flushed batch: orders=200 items=378
+[2025-09-08T13:20:50.029+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,029 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793810b97520>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:50.227+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,227 INFO: Flushed batch: orders=200 items=329
+[2025-09-08T13:20:50.230+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,230 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793810ae23e0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:50.427+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,427 INFO: Flushed batch: orders=200 items=355
+[2025-09-08T13:20:50.429+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,429 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793810ae4310>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:50.602+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,602 INFO: Flushed batch: orders=200 items=364
+[2025-09-08T13:20:50.605+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,604 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793810afe4a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:50.786+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,785 INFO: Flushed batch: orders=200 items=377
+[2025-09-08T13:20:50.788+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,788 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381092b340>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:50.986+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,985 INFO: Flushed batch: orders=200 items=311
+[2025-09-08T13:20:50.988+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:50,988 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793810928ac0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:51.170+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:51,169 INFO: Flushed batch: orders=200 items=362
+[2025-09-08T13:20:51.173+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:51,173 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793810ae3b20>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:51.403+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:51,403 INFO: Flushed batch: orders=200 items=323
+[2025-09-08T13:20:51.406+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:51,406 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793810910ee0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:51.587+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:51,586 INFO: Flushed batch: orders=200 items=349
+[2025-09-08T13:20:51.589+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:51,589 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381092d150>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:51.787+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:51,786 INFO: Flushed batch: orders=200 items=368
+[2025-09-08T13:20:51.790+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:51,789 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793810910250>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:51.961+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:51,961 INFO: Flushed batch: orders=200 items=336
+[2025-09-08T13:20:51.964+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:51,964 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381092ed10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:52.137+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:52,136 INFO: Flushed batch: orders=200 items=352
+[2025-09-08T13:20:52.139+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:52,139 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381093f520>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:52.337+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:52,337 INFO: Flushed batch: orders=200 items=315
+[2025-09-08T13:20:52.340+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:52,340 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381093dba0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:52.531+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:52,530 INFO: Flushed batch: orders=200 items=331
+[2025-09-08T13:20:52.534+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:52,533 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381092ef20>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:52.706+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:52,706 INFO: Flushed batch: orders=200 items=320
+[2025-09-08T13:20:52.709+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:52,708 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381093c970>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:52.906+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:52,905 INFO: Flushed batch: orders=200 items=365
+[2025-09-08T13:20:52.908+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:52,908 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381093e1d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:53.089+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:53,089 INFO: Flushed batch: orders=200 items=368
+[2025-09-08T13:20:53.091+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:53,091 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381094bbb0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:53.281+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:53,280 INFO: Flushed batch: orders=200 items=343
+[2025-09-08T13:20:53.282+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:53,282 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381094bc10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:53.464+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:53,464 INFO: Flushed batch: orders=200 items=341
+[2025-09-08T13:20:53.466+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:53,466 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793810949c60>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:53.682+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:53,681 INFO: Flushed batch: orders=200 items=346
+[2025-09-08T13:20:53.684+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:53,684 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381094b910>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:53.873+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:53,873 INFO: Flushed batch: orders=200 items=353
+[2025-09-08T13:20:53.877+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:53,877 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381093f3a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:54.090+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:54,090 INFO: Flushed batch: orders=200 items=337
+[2025-09-08T13:20:54.094+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:54,094 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793810ae4070>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:54.282+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:54,282 INFO: Flushed batch: orders=200 items=368
+[2025-09-08T13:20:54.285+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:54,285 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381092d030>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:54.523+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:54,523 INFO: Flushed batch: orders=200 items=358
+[2025-09-08T13:20:54.525+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:54,525 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79381092a020>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:20:54.525+0530] {subprocess.py:93} INFO - 2025-09-08 13:20:54,525 INFO: Generated 5000 orders
+[2025-09-08T13:21:13.338+0530] {subprocess.py:93} INFO - 2025-09-08 13:21:13,338 INFO: Inserted 48031 clickstream events.
+[2025-09-08T13:21:13.339+0530] {subprocess.py:93} INFO - 2025-09-08 13:21:13,339 WARNING: Failed to send webhook notification: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /webhook (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x793811111600>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2025-09-08T13:21:13.711+0530] {subprocess.py:93} INFO - 2025-09-08 13:21:13,711 INFO: Validation done: orphans orders=0 items=0 inventory=0 mismatches=0
+[2025-09-08T13:21:13.713+0530] {subprocess.py:93} INFO - 2025-09-08 13:21:13,713 INFO: Integrity report: {'orphan_orders': 0, 'orphan_order_items': 0, 'inventory_orphans': 0, 'order_amount_mismatches': []}
+[2025-09-08T13:21:13.744+0530] {subprocess.py:93} INFO - [2025-09-08 13:21:13] ✅ Synthetic data streaming completed successfully!
+[2025-09-08T13:21:13.744+0530] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-09-08T13:21:13.744+0530] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-08T13:21:13.970+0530] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=synth_stream_5min, task_id=run_synth_stream, run_id=scheduled__2025-09-08T07:45:00+00:00, execution_date=20250908T074500, start_date=20250908T075048, end_date=20250908T075113
+[2025-09-08T13:21:14.251+0530] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-09-08T13:21:14.260+0530] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-08T13:21:14.261+0530] {local_task_job_runner.py:222} INFO - ::endgroup::
