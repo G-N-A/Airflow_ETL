@@ -12,8 +12,8 @@ DEFAULT_ARGS = {
     "retry_delay": timedelta(minutes=5),
 }
 
-SYNTH_SCRIPT = "/media/softsuave/DATA-HDD/DataEngineering/Apache_Airflow/scripts/synth/run_synth_stream.sh"
-ETL_SCRIPT = "/media/softsuave/DATA-HDD/DataEngineering/Apache_Airflow/scripts/etl/run_etl.sh"
+SYNTH_SCRIPT = "/media/softsuave/ef660aa7-82af-4e74-a314-ff3c6b242904/DataEngineering/Apache_Airflow/scripts/synth/run_synth_stream.sh"
+ETL_SCRIPT = "/media/softsuave/ef660aa7-82af-4e74-a314-ff3c6b242904/DataEngineering/Apache_Airflow/scripts/etl/run_etl.sh"
 
 # -----------------------------------------
 # DAG 1: Synthetic stream every 5 minutes starting at 12:35
@@ -31,7 +31,7 @@ with DAG(
         task_id="run_synth_stream",
         bash_command=f"bash {SYNTH_SCRIPT} | cat",
         env={
-            "PATH": "/media/softsuave/DATA-HDD/DataEngineering/Apache_Airflow/airflow_venv/bin:" +
+            "PATH": "/media/softsuave/ef660aa7-82af-4e74-a314-ff3c6b242904/DataEngineering/Apache_Airflow/airflow_venv/bin:" +
                     "{{ var.value.get('PATH', '/usr/bin:/bin') }}"
         },
     )
@@ -52,7 +52,7 @@ with DAG(
         task_id="run_etl_pipeline",
         bash_command=f"bash {ETL_SCRIPT} | cat",
         env={
-            "PATH": "/media/softsuave/DATA-HDD/DataEngineering/Apache_Airflow/airflow_venv/bin:" +
+            "PATH": "/media/softsuave/ef660aa7-82af-4e74-a314-ff3c6b242904/DataEngineering/Apache_Airflow/airflow_venv/bin:" +
                     "{{ var.value.get('PATH', '/usr/bin:/bin') }}"
         },
     )
