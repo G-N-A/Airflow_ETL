@@ -2,3 +2,4 @@ airflow.db
 *.pyc
 *.log
 logs/
+airflow_venv/
